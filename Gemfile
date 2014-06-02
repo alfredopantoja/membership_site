@@ -16,6 +16,7 @@ gem 'apartment'
 gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form'
 gem 'stripe'
 gem 'stripe_event'
+gem 'figaro'
 
 group :development, :test do
   gem 'guard'
