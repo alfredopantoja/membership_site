@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  # This doesn't work in Rails 4. Figure out how to do. 
+  #authenticated :user do
+  #  root 'home#index'
+  #end  
+  
+  root 'home#index'
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
