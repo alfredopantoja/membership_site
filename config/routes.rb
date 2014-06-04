@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'content/silver'
+
+  get 'content/gold'
+
+  get 'content/platinum'
+
+  get 'users/index'
+
+  get 'users/show'
+
   # This doesn't work in Rails 4. Figure out how to do. 
   #authenticated :user do
   #  root 'home#index'
@@ -6,6 +16,7 @@ Rails.application.routes.draw do
   
   root 'home#index'
   devise_for :users
+  resources :users, only: [:index, :show, :update, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
