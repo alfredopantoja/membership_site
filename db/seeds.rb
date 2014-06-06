@@ -13,12 +13,12 @@ YAML.load(ENV['ROLES']).each do |role|
   puts 'role: ' << role
 end
 puts 'DEFAULT USERS'
-user = User.where(email: ENV['ADMIN_EMAIL'].dup).first_or_create(email: ENV['ADMIN_EMAIL'].dup, password: ENV['ADMIN_PASSWORD'].dup, password_confirmation: ENV['ADMIN_PASSWORD'].dup)
+user = User.where(email: ENV['ADMIN_EMAIL'].dup).first_or_create(name: ENV['ADMIN_NAME'].dup, email: ENV['ADMIN_EMAIL'].dup, password: ENV['ADMIN_PASSWORD'].dup, password_confirmation: ENV['ADMIN_PASSWORD'].dup)
 user.add_role :admin
-user2 = User.where(email: 'silver@example.com').first_or_create(email: 'silver@example.com', password: 'changeme', password_confirmation: 'changeme')
+user2 = User.where(email: 'silver@example.com').first_or_create(name: 'Silver User', email: 'silver@example.com', password: 'changeme', password_confirmation: 'changeme')
 user2.add_role :silver
-user3 = User.where(email: 'gold@example.com').first_or_create(email: 'gold@example.com', password: 'changeme', password_confirmation: 'changeme')
+user3 = User.where(email: 'gold@example.com').first_or_create(name: 'Gold User', email: 'gold@example.com', password: 'changeme', password_confirmation: 'changeme')
 user3.add_role :gold
-user4 = User.where(email: 'platinum@example.com').first_or_create(email: 'platinum@example.com', password: 'changeme', password_confirmation: 'changeme')
+user4 = User.where(email: 'platinum@example.com').first_or_create(name: 'Platinum User', email: 'platinum@example.com', password: 'changeme', password_confirmation: 'changeme')
 user4.add_role :platinum
-puts "users: #{user2.email}, #{user3.email}, #{user4.email}"
+puts "users: #{user2.name}, #{user3.name}, #{user4.name}"
