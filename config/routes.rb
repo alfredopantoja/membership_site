@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   #end  
   root 'home#index'
   devise_for :users, controllers: { registrations: 'registrations' }
+  devise_scope :user do
+    put 'update_plan', to: 'registrations#update_plan'
+    put 'update_card', to: 'registrations#update_card'
+  end  
   resources :users, only: [:index, :show, :update, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
