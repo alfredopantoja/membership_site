@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount StripeEvent::Engine => '/stripe'
   get 'content/silver'
   get 'content/gold'
   get 'content/platinum'
